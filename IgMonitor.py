@@ -141,7 +141,6 @@ class Monitor:
             data=data,
         )
         try:
-            response.raise_for_status()
             if 'No users found' in response.text:
                 return self.check()
             elif 'recovery_method' in response.text or response.json().get('status') == 'ok':
